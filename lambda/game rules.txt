@@ -1,0 +1,14 @@
+A - Escolhe uma pessoa para beber uma dose;
+2 - Escolhe duas pessoas para beber uma dose ou uma pessoa para beber duas doses;
+3 - Quem tirou escolhe três pessoas para beber uma dose;
+4 - Toma dose dupla;
+5 - Não pode ir ao banheiro até outra pessoa tirar o 5, se não aguentar bebe dose dupla quando voltar.
+6 - Mão na mesa. O último que colocar a palma da mão na mesa bebe.
+7 - História. O primeiro fala tipo (era uma vez), o próximo (era uma vez um cara bêbado), e assim por diante. Quem errar bebe.
+8 - Palavra não dita. Quem tirar a carta escolhe uma palavra que não pode ser dita. Quem falar bebe.
+9 - PI - Cada um fala um número, múltiplos de 3 e que tenham 3 são substituídos por PI, quem errar bebe. Ex.: 1, 2, PI, 4, 5, PI, 7, 8, PI, 10, 11, PI, PI, 14, ...
+9 - Regra Individual. Escolhe-se alguém para fazer alguma ação ou beber todas vez que acontecer outra ação no jogo ou algém beber. Se o jogador escolhido não fizer, ele bebe.
+10 - Regra Geral. Escolhe-se uma regra que vale para todos os jogadores. Quem não fizer, bebe. Vale no máximo duas regras gerais simultaneamente. Ex.: Quem mexer no cabelo bebe.
+J - Homens bebem.
+Q - Mulheres bebem.
+K - Todos bebem.
