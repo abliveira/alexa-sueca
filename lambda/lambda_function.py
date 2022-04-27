@@ -90,11 +90,11 @@ class RuleIntentHandler(AbstractRequestHandler):
         elif slot.value in ["5", "cinco", "cinquinho"]:
             speak_output = "Cinco significa C S composto. Quem tirou a carta deve falar uma palavra que não comece com C ou S e \
             que não seja composta. A pessoa seguinte da roda deve falar uma outra palavra relacionada seguindo as mesmas regras. \
-            Quem errar ou repetir uma palavra, bebe"
+            Quem errar ou repetir uma palavra já dita, bebe"
         
         elif slot.value in ["6", "seis", "seisinho"]:
             speak_output = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
-            do jogo e todos os outros jogadores devem fazer o mesmo. O último a prestar Continência bebe."
+            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."
         
         # elif slot.value in ["7", "sete", "setinho"]:
         #     speak_output = "Sete significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
@@ -120,9 +120,6 @@ class RuleIntentHandler(AbstractRequestHandler):
         elif slot.value in ["10", "dez", "dezinho", "deizinho"]:
             speak_output = "Dez significa Regra Geral. Quem tirou deve escolher uma regra que vale para todos os jogadores. \
             Quem não cumprir a regra, bebe. Valem no máximo duas regras gerais simultaneamente."
-            
-        elif slot.value in ["dama", "daminha", "rainha"]:
-            speak_output = "Dama significa que todas as mulheres bebem"
             
         elif slot.value in ["dama", "daminha", "rainha"]:
             speak_output = "Dama significa que todas as mulheres bebem"

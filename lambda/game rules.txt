@@ -1,14 +1,20 @@
-A - Escolhe uma pessoa para beber uma dose;
+A - Quem tirou a carta bebe uma dose;
 2 - Escolhe duas pessoas para beber uma dose ou uma pessoa para beber duas doses;
-3 - Quem tirou escolhe três pessoas para beber uma dose;
-4 - Toma dose dupla;
-5 - Não pode ir ao banheiro até outra pessoa tirar o 5, se não aguentar bebe dose dupla quando voltar.
-6 - Mão na mesa. O último que colocar a palma da mão na mesa bebe.
-7 - História. O primeiro fala tipo (era uma vez), o próximo (era uma vez um cara bêbado), e assim por diante. Quem errar bebe.
-8 - Palavra não dita. Quem tirar a carta escolhe uma palavra que não pode ser dita. Quem falar bebe.
-9 - PI - Cada um fala um número, múltiplos de 3 e que tenham 3 são substituídos por PI, quem errar bebe. Ex.: 1, 2, PI, 4, 5, PI, 7, 8, PI, 10, 11, PI, PI, 14, ...
+3 - Jogo da memória "Eu fui a feira e comprei...". Quem tirou a carta deve dizer 'Fui a feira e comprei' e então escolher um item. A pessoa seguinte da roda deve repetir o que foi dito acrescentando mais um item. Quem esquecer ou trocar a ordem, bebe uma dose;
+4 - Jogo "Eu Nunca". Quem tirou a carta deve falar algo que nunca fez. Que já fez, bebe uma dose;
+5 - Jogo C S Composto. Quem tirou a carta deve falar uma palavra que não comece com C ou S e que não seja composta. A pessoa seguinte da roda deve falar uma outra palavra relacionada seguindo as mesmas regras. Quem errar ou repetir uma palavra já dita, bebe uma dose;
+Não pode ir ao banheiro até outra pessoa tirar o 5, se não aguentar bebe dose dupla quando voltar.
+6 - Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe uma dose;
+7 - Jogo do Pi: Quem tirou deve dizer começar a contar a partir de um, e a pessoa seguinte deve continuar a contagem. Sempre que o número a ser falado for múltiplo de sete ou terminar em sete, a pessoa da vez deve dizer Pi. Se errar, bebe uma dose;
+8 - Oito significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar a sequência novamente em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe uma dose;
 9 - Regra Individual. Escolhe-se alguém para fazer alguma ação ou beber todas vez que acontecer outra ação no jogo ou algém beber. Se o jogador escolhido não fizer, ele bebe.
-10 - Regra Geral. Escolhe-se uma regra que vale para todos os jogadores. Quem não fizer, bebe. Vale no máximo duas regras gerais simultaneamente. Ex.: Quem mexer no cabelo bebe.
-J - Homens bebem.
-Q - Mulheres bebem.
-K - Todos bebem.
+10 - Regra Geral. Escolhe-se uma regra que vale para todos os jogadores. Quem não fizer, bebe. Vale no máximo duas regras gerais simultaneamente. Ex.: Uma palavra que não pode ser dita.
+J - Todos os homens bebem uma dose;
+Q - Todas as mulheres bebem uma dose;
+K - Todos bebem uma dose;
+
+Outras regras não utilizadas:
+- Mão na mesa. O último que colocar a palma da mão na mesa bebe.
+- História. O primeiro fala tipo (era uma vez), o próximo (era uma vez um cara bêbado), e assim por diante. Quem errar bebe.
+- Palavra não dita. Quem tirar a carta escolhe uma palavra que não pode ser dita. Quem falar bebe.
+- Não pode ir ao banheiro até outra pessoa tirar outra carta igual, se não aguentar bebe dose dupla quando voltar.
