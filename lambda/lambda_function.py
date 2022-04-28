@@ -29,7 +29,7 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-        speak_output = "Olá! Vamos jogar sueca! Você pode me pedir para sortiar uma cartar ou me pedir para explicar o jogo"
+        speak_output = "Vamos jogar sueca! Você pode me pedir para sortiar uma carta ou me pedir para explicar o jogo"
 
         return (
             handler_input.response_builder
@@ -48,13 +48,24 @@ class PickACardIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
 
-        todas_cartas = ["as", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
+        # todas_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
         
-        carta_tirada = random.choice(todas_cartas)
+        # carta_tirada = random.choice(todas_cartas)
         
-        # speak_output = 'Thanks, I will remember that you were born {month} {day} {year}.'.format(month=month, day=day, year=year)
+        # speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}.'.format(carta_tirada=carta_tirada)
         
-        speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}'.format(carta_tirada=carta_tirada)
+        nome_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
+        
+        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pi Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+        
+        carta_indice = random.randint(1, 13)
+        
+        carta_tirada = nome_cartas[carta_indice-1]
+
+        regra_tirada = regra_cartas[carta_indice-1]
+        
+        speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}. {regra_tirada}.'.format(carta_tirada=carta_tirada, regra_tirada=regra_tirada)
+        
         
         return (
             handler_input.response_builder
@@ -77,7 +88,7 @@ class RuleIntentHandler(AbstractRequestHandler):
             speak_output = "Ás significa que quem tirou a carta bebe"
             
         elif slot.value in ["2", "dois", "doisinho"]:
-            speak_output = "Dois significa que quem tirou a carta deve escolher duas pessoas para beberem"
+            speak_output = "Dois significa que quem tirou a carta deve escolher duas pessoas para beber"
             
         elif slot.value in ["3", "tres"]:
             speak_output = "Tres significa Fui à feira. Quem tirou a carta deve dizer 'Fui a feira e comprei' e então escolher \
@@ -94,7 +105,7 @@ class RuleIntentHandler(AbstractRequestHandler):
         
         elif slot.value in ["6", "seis", "seisinho"]:
             speak_output = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
-            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."
+            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe.""
         
         # elif slot.value in ["7", "sete", "setinho"]:
         #     speak_output = "Sete significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
@@ -108,7 +119,7 @@ class RuleIntentHandler(AbstractRequestHandler):
         elif slot.value in ["8", "oito", "oitinho"]:
             speak_output = "Oito significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
             deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
-            a sequência novamente em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
+            a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
         
         # elif slot.value in ["8", "oito", "oitinho"]:
         #     speak_output = "Oito significa Patinhos na Lagoa. Quem tirou a carta deve dizer ." 
@@ -140,7 +151,7 @@ class RuleIntentHandler(AbstractRequestHandler):
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
-
+    
 
 class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""

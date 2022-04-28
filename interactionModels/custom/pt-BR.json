@@ -17,8 +17,9 @@
             "como funciona o jogo",
             "como é o jogo",
             "como funciona",
-            "explique o jogo",
-            "ajuda"
+            "ajuda",
+            "me ajuda",
+            "explica o jogo"
           ]
         },
         {
@@ -37,14 +38,26 @@
           "name": "PickACardIntent",
           "slots": [],
           "samples": [
-            "Sorteie uma carta",
+            "De uma carta",
             "Diga uma carta",
-            "Me diga uma carta",
+            "Fala uma carta",
+            "Fale uma carta",
+            "Manda uma carta",
+            "Mande uma carta",
             "Me de uma carta",
-            "Próxima carta",
+            "Me diga uma carta",
             "Me sorteie uma carta",
+            "Me tira uma carta",
+            "Me tire uma carta",
+            "Me vira uma carta",
+            "Me vire uma carta",
+            "Próxima carta",
             "Próxima rodada",
-            "Tire uma carta"
+            "Sorteie uma carta",
+            "Tira uma carta",
+            "Tire uma carta",
+            "Vira uma carta",
+            "Vire uma carta"
           ]
         },
         {
@@ -52,7 +65,7 @@
           "slots": [
             {
               "name": "carta",
-              "type": "cartaspossiveis"
+              "type": "CartasPossiveis"
             }
           ],
           "samples": [
@@ -176,10 +189,10 @@
               }
             }
           ],
-          "name": "cartaspossiveis"
+          "name": "CartasPossiveis"
         }
       ]
     }
   },
-  "version": "13"
+  "version": "15"
 }
