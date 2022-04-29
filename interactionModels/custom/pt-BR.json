@@ -75,6 +75,17 @@
             "o que quer dizer {carta}",
             "o que significa {carta}"
           ]
+        },
+        {
+          "name": "InfoIntent",
+          "slots": [],
+          "samples": [
+            "quem desenvolveu o jogo",
+            "quem fez o jogo",
+            "quem fez essa skill",
+            "quem criou essa skill",
+            "quem desenvolveu essa skill"
+          ]
         }
       ],
       "types": [

@@ -151,7 +151,25 @@ class RuleIntentHandler(AbstractRequestHandler):
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
+        
     
+class InfoIntentHandler(AbstractRequestHandler):
+    
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("InfoIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speak_output = "O jogo Sueca para Alexa foi desenvolvido por abliveira"
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                #.ask(speak_output)
+                .response
+        )
+
 
 class HelpIntentHandler(AbstractRequestHandler):
     """Handler for Help Intent."""
@@ -272,6 +290,7 @@ sb = SkillBuilder()
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(PickACardIntentHandler())
 sb.add_request_handler(RuleIntentHandler())
+sb.add_request_handler(InfoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(FallbackIntentHandler())
