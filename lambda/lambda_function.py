@@ -54,17 +54,29 @@ class PickACardIntentHandler(AbstractRequestHandler):
         
         # speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}.'.format(carta_tirada=carta_tirada)
         
+        confirmacoes = ["Ok", "Ok", "Está bem", "Claro"]
+        
+        # tamanho_conf = len(confirmacoes) - 1
+        
+        confirmacao = confirmacoes[random.randint(0, len(confirmacoes) - 1)] # Mede o tamanho da lista e subtrai um para usar como índice
+        
+        # confirmacao = confirmacoes[random.randint(0, 3)
+        
+        frases_carta = ["A carta que eu tirei foi", "A carta que eu sortiei foi", "A carta que eu virei foi", "Eu virei", "Eu tirei"]
+        
+        frase_tirada = frases_carta[random.randint(0, len(frases_carta) - 1)]
+        
         nome_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
         
-        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pi Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
         
-        carta_indice = random.randint(1, 13)
+        carta_indice = random.randint(1, 13) - 1
         
-        carta_tirada = nome_cartas[carta_indice-1]
+        carta_tirada = nome_cartas[carta_indice]
 
-        regra_tirada = regra_cartas[carta_indice-1]
+        regra_tirada = regra_cartas[carta_indice]
         
-        speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}. {regra_tirada}.'.format(carta_tirada=carta_tirada, regra_tirada=regra_tirada)
+        speak_output = '{confirmacao}! {frase_tirada} {carta_tirada}. {regra_tirada}.'.format(frase_tirada=frase_tirada, confirmacao=confirmacao, carta_tirada=carta_tirada, regra_tirada=regra_tirada)
         
         
         return (
@@ -84,7 +96,7 @@ class RuleIntentHandler(AbstractRequestHandler):
 
         slot = ask_utils.request_util.get_slot(handler_input, "carta")
         
-        if slot.value in ["às", "ás", "as"]:
+        if slot.value in ["às", "ás", "as", "asinho"]:
             speak_output = "Ás significa que quem tirou a carta bebe"
             
         elif slot.value in ["2", "dois", "doisinho"]:
@@ -105,10 +117,10 @@ class RuleIntentHandler(AbstractRequestHandler):
         
         elif slot.value in ["6", "seis", "seisinho"]:
             speak_output = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
-            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe.""
+            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."""
         
         # elif slot.value in ["7", "sete", "setinho"]:
-        #     speak_output = "Sete significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
+        #     speak_output = "Sete significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
         #     deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
         #     a sequência novamente em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
             
@@ -117,7 +129,7 @@ class RuleIntentHandler(AbstractRequestHandler):
             Sempre que o número a ser falado for múltiplo de sete ou terminar em sete, a pessoa da vez deve dizer Pi. Se errar, bebe."
             
         elif slot.value in ["8", "oito", "oitinho"]:
-            speak_output = "Oito significa Pi Pa Pum. Quem tirou deve dizer Pi, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
+            speak_output = "Oito significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
             deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
             a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
         
@@ -216,7 +228,7 @@ class FallbackIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         logger.info("In FallbackIntentHandler")
-        speech = "Hmm, não tenho certeza. Você pode me pedir uma carta ou Ajuda. O que você gostaria de fazer?"
+        speech = "Hmm, não tenho certeza. Você pode me pedir uma carta ou ajuda. O que você gostaria de fazer?"
         reprompt = "Eu não entendi isso. Com o que posso te ajudar?"
 
         return handler_input.response_builder.speak(speech).ask(reprompt).response

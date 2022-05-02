@@ -1,209 +1,211 @@
 {
   "interactionModel": {
-    "languageModel": {
-      "invocationName": "sueca",
-      "intents": [
-        {
-          "name": "AMAZON.CancelIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.HelpIntent",
-          "samples": [
-            "como jogar",
-            "come se joga",
-            "não entendi o jogo",
-            "me explique o jogo",
-            "como funciona o jogo",
-            "como é o jogo",
-            "como funciona",
-            "ajuda",
-            "me ajuda",
-            "explica o jogo"
-          ]
-        },
-        {
-          "name": "AMAZON.StopIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.NavigateHomeIntent",
-          "samples": []
-        },
-        {
-          "name": "AMAZON.FallbackIntent",
-          "samples": []
-        },
-        {
-          "name": "PickACardIntent",
-          "slots": [],
-          "samples": [
-            "De uma carta",
-            "Diga uma carta",
-            "Fala uma carta",
-            "Fale uma carta",
-            "Manda uma carta",
-            "Mande uma carta",
-            "Me de uma carta",
-            "Me diga uma carta",
-            "Me sorteie uma carta",
-            "Me tira uma carta",
-            "Me tire uma carta",
-            "Me vira uma carta",
-            "Me vire uma carta",
-            "Próxima carta",
-            "Próxima rodada",
-            "Sorteie uma carta",
-            "Tira uma carta",
-            "Tire uma carta",
-            "Vira uma carta",
-            "Vire uma carta"
-          ]
-        },
-        {
-          "name": "RuleIntent",
-          "slots": [
-            {
-              "name": "carta",
-              "type": "CartasPossiveis"
-            }
+      "languageModel": {
+          "invocationName": "sueca",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": [
+                      "como jogar",
+                      "come se joga",
+                      "não entendi o jogo",
+                      "me explique o jogo",
+                      "como funciona o jogo",
+                      "como é o jogo",
+                      "como funciona",
+                      "ajuda",
+                      "me ajuda",
+                      "explica o jogo"
+                  ]
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.FallbackIntent",
+                  "samples": []
+              },
+              {
+                  "name": "PickACardIntent",
+                  "slots": [],
+                  "samples": [
+                      "De uma carta",
+                      "Diga uma carta",
+                      "Fala uma carta",
+                      "Fale uma carta",
+                      "Manda uma carta",
+                      "Mande uma carta",
+                      "Me de uma carta",
+                      "Me diga uma carta",
+                      "Me sorteie uma carta",
+                      "Me tira uma carta",
+                      "Me tire uma carta",
+                      "Me vira uma carta",
+                      "Me vire uma carta",
+                      "Próxima carta",
+                      "Próxima rodada",
+                      "Sorteie uma carta",
+                      "Tira uma carta",
+                      "Tire uma carta",
+                      "Vira uma carta",
+                      "Vire uma carta"
+                  ]
+              },
+              {
+                  "name": "RuleIntent",
+                  "slots": [
+                      {
+                          "name": "carta",
+                          "type": "CartasPossiveis"
+                      }
+                  ],
+                  "samples": [
+                      "o que significa a carta {carta} de sueca",
+                      "o que significa a carta {carta}",
+                      "qual a regra da carta {carta}",
+                      "o que é {carta}",
+                      "o que quer dizer {carta}",
+                      "o que significa {carta}"
+                  ]
+              },
+              {
+                  "name": "InfoIntent",
+                  "slots": [],
+                  "samples": [
+                      "quem desenvolveu o jogo",
+                      "quem fez o jogo",
+                      "quem fez essa skill",
+                      "quem criou essa skill",
+                      "quem desenvolveu essa skill"
+                  ]
+              }
           ],
-          "samples": [
-            "o que significa a carta {carta}",
-            "qual a regra da carta {carta}",
-            "o que é {carta}",
-            "o que quer dizer {carta}",
-            "o que significa {carta}"
+          "types": [
+              {
+                  "name": "CartasPossiveis",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "as",
+                              "synonyms": [
+                                  "às",
+                                  "ás",
+                                  "asinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "dois",
+                              "synonyms": [
+                                  "doisinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "tres",
+                              "synonyms": [
+                                  "treizinho",
+                                  "tresinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "quatro",
+                              "synonyms": [
+                                  "quatrozinho",
+                                  "quatrinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "cinco",
+                              "synonyms": [
+                                  "cinquinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "seis",
+                              "synonyms": [
+                                  "seisinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "sete",
+                              "synonyms": [
+                                  "setizinho",
+                                  "setinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "oito",
+                              "synonyms": [
+                                  "oitozinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "nove",
+                              "synonyms": [
+                                  "novizinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "dez",
+                              "synonyms": [
+                                  "deizinho",
+                                  "dezinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "dama",
+                              "synonyms": [
+                                  "daminha"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "rei",
+                              "synonyms": [
+                                  "reizinho"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "valete",
+                              "synonyms": [
+                                  "valetinho"
+                              ]
+                          }
+                      }
+                  ]
+              }
           ]
-        },
-        {
-          "name": "InfoIntent",
-          "slots": [],
-          "samples": [
-            "quem desenvolveu o jogo",
-            "quem fez o jogo",
-            "quem fez essa skill",
-            "quem criou essa skill",
-            "quem desenvolveu essa skill"
-          ]
-        }
-      ],
-      "types": [
-        {
-          "values": [
-            {
-              "name": {
-                "value": "as",
-                "synonyms": [
-                  "asinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "dois",
-                "synonyms": [
-                  "doisinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "tres",
-                "synonyms": [
-                  "treizinho",
-                  "tresinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "quatro",
-                "synonyms": [
-                  "quatrozinho",
-                  "quatrinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "cinco",
-                "synonyms": [
-                  "cinquinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "seis",
-                "synonyms": [
-                  "seisinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "sete",
-                "synonyms": [
-                  "setizinho",
-                  "setinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "oito",
-                "synonyms": [
-                  "oitozinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "nove",
-                "synonyms": [
-                  "novizinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "dez",
-                "synonyms": [
-                  "deizinho",
-                  "dezinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "dama",
-                "synonyms": [
-                  "daminha"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "rei",
-                "synonyms": [
-                  "reizinho"
-                ]
-              }
-            },
-            {
-              "name": {
-                "value": "valete",
-                "synonyms": [
-                  "valetinho"
-                ]
-              }
-            }
-          ],
-          "name": "CartasPossiveis"
-        }
-      ]
-    }
-  },
-  "version": "15"
+      }
+  }
 }
