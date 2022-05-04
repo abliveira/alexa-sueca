@@ -87,6 +87,17 @@
                       "quem criou essa skill",
                       "quem desenvolveu essa skill"
                   ]
+              },
+              {
+                  "name": "RememberRuleIntent",
+                  "slots": [],
+                  "samples": [
+                      "Me lembre a última carta",
+                      "Qual foi a última regra tirada",
+                      "Qual foi a última regra",
+                      "Qual foi a última carta tirada",
+                      "Qual foi a última carta"
+                  ]
               }
           ],
           "types": [

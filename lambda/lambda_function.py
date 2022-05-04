@@ -7,8 +7,11 @@
 import logging
 import ask_sdk_core.utils as ask_utils
 import random
+import os
+from ask_sdk_s3.adapter import S3Adapter
+s3_adapter = S3Adapter(bucket_name=os.environ["S3_PERSISTENCE_BUCKET"])
 
-from ask_sdk_core.skill_builder import SkillBuilder
+from ask_sdk_core.skill_builder import CustomSkillBuilder
 from ask_sdk_core.dispatch_components import AbstractRequestHandler
 from ask_sdk_core.dispatch_components import AbstractExceptionHandler
 from ask_sdk_core.handler_input import HandlerInput
@@ -75,6 +78,15 @@ class PickACardIntentHandler(AbstractRequestHandler):
         carta_tirada = nome_cartas[carta_indice]
 
         regra_tirada = regra_cartas[carta_indice]
+
+        attributes_manager = handler_input.attributes_manager
+
+        carta_attributes = {
+            "last_rule": carta_indice
+        }
+
+        attributes_manager.persistent_attributes = carta_attributes
+        attributes_manager.save_persistent_attributes()
         
         speak_output = '{confirmacao}! {frase_tirada} {carta_tirada}. {regra_tirada}.'.format(frase_tirada=frase_tirada, confirmacao=confirmacao, carta_tirada=carta_tirada, regra_tirada=regra_tirada)
         
@@ -117,7 +129,7 @@ class RuleIntentHandler(AbstractRequestHandler):
         
         elif slot.value in ["6", "seis", "seisinho"]:
             speak_output = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
-            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."""
+            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."
         
         # elif slot.value in ["7", "sete", "setinho"]:
         #     speak_output = "Sete significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
@@ -164,7 +176,43 @@ class RuleIntentHandler(AbstractRequestHandler):
                 .response
         )
         
+
+class RememberRuleIntentHandler(AbstractRequestHandler):
     
+    def can_handle(self, handler_input):
+        # extract persistent attributes and check if they are all present
+        attr = handler_input.attributes_manager.persistent_attributes
+        attributes_are_present = ("last_rule" in attr)
+
+        return attributes_are_present and ask_utils.is_intent_name("RememberRuleIntent")(handler_input)
+        
+    def handle(self, handler_input):
+
+        attr = handler_input.attributes_manager.persistent_attributes
+        last_rule = attr['last_rule']
+
+        # frases_carta = ["A carta que eu tirei foi", "A carta que eu sortiei foi", "A carta que eu virei foi", "Eu virei", "Eu tirei"]
+        
+        # frase_tirada = frases_carta[random.randint(0, len(frases_carta) - 1)]
+        
+        nome_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
+        
+        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+        
+        carta_tirada = nome_cartas[last_rule]
+
+        regra_tirada = regra_cartas[last_rule]
+        
+        speak_output = 'A última carta que tirei foi {carta_tirada}. {regra_tirada}.'.format(carta_tirada=carta_tirada, regra_tirada=regra_tirada)
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
 class InfoIntentHandler(AbstractRequestHandler):
     
     def can_handle(self, handler_input):
@@ -297,11 +345,12 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
 # defined are included below. The order matters - they're processed top to bottom.
 
 
-sb = SkillBuilder()
+sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(PickACardIntentHandler())
 sb.add_request_handler(RuleIntentHandler())
+sb.add_request_handler(RememberRuleIntentHandler())
 sb.add_request_handler(InfoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
