@@ -240,12 +240,13 @@ class HelpIntentHandler(AbstractRequestHandler):
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
         speak_output = "O jogo é muito simples. Em sentido horário, a cada rodada um jogador me pede para \
-        tirar uma carta e o jogador deve seguir a regra da carta. A qualquer momento você pode me perguntar qual o significado da carta"
+        tirar uma carta e o jogador deve seguir a regra da carta. A qualquer momento você pode me perguntar \
+        qual o significado de uma carta ou qual foi a última carta tirada. O que você deseja?"
 
         return (
             handler_input.response_builder
                 .speak(speak_output)
-                #.ask(speak_output)
+                .ask(speak_output)
                 .response
         )
 
