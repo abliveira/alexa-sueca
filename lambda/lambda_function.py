@@ -23,6 +23,35 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
+nome_cartas = ["ás", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
+regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+
+significado_as = "Ás significa que quem tirou a carta bebe"
+significado_dois = "Dois significa que quem tirou a carta deve escolher duas pessoas para beber"
+significado_tres = "Três significa Fui à feira. Quem tirou a carta deve dizer 'Fui a feira e comprei' e então escolher \
+            um item. A pessoa seguinte da roda deve repetir o que foi dito acrescentando mais um item. Quem esquecer ou trocar \
+            a ordem, bebe"
+significado_quatro = "Quatro significa Eu Nunca. Quem tirou a carta deve falar algo que nunca fez. Quem já fez, bebe"
+significado_cinco = "Cinco significa C S composto. Quem tirou a carta deve falar uma palavra que não comece com C ou S e \
+            que não seja composta. A pessoa seguinte da roda deve falar uma outra palavra relacionada seguindo as mesmas regras. \
+            Quem errar ou repetir uma palavra já dita, bebe"
+significado_seis = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
+            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."
+significado_sete = "Sete significa Pi. Quem tirou deve dizer começar a contar a partir de um, e a pessoa seguinte deve continuar a contagem. \
+            Sempre que o número a ser falado for múltiplo de sete ou terminar em sete, a pessoa da vez deve dizer Pi. Se errar, bebe."
+significado_oito = "Oito significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
+            deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
+            a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
+significado_nove = "Nove significa Regra Individual. Quem tirou a carta deve escolher alguém para fazer alguma ação \
+            toda vez que acontecer outra ação no jogo, incluindo beber. Se o jogador escolhido não cumprir, ele bebe."
+significado_dez = "Dez significa Regra Geral. Quem tirou deve escolher uma regra que vale para todos os jogadores. \
+            Quem não cumprir a regra, bebe. Valem no máximo duas regras gerais simultaneamente."
+significado_dama = "Dama significa que todas as mulheres bebem"
+significado_valete = "Valete significa que todos os homens bebem"
+significado_rei = "Rei significa que todos bebem"
+# "Oito significa Patinhos na Lagoa. Quem tirou a carta deve dizer ." 
+
+
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
     def can_handle(self, handler_input):
@@ -50,28 +79,14 @@ class PickACardIntentHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
-
-        # todas_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
-        
-        # carta_tirada = random.choice(todas_cartas)
-        
-        # speak_output = 'Ok! A carta que eu tirei foi {carta_tirada}.'.format(carta_tirada=carta_tirada)
         
         confirmacoes = ["Ok", "Ok", "Está bem", "Claro"]
         
-        # tamanho_conf = len(confirmacoes) - 1
-        
         confirmacao = confirmacoes[random.randint(0, len(confirmacoes) - 1)] # Mede o tamanho da lista e subtrai um para usar como índice
-        
-        # confirmacao = confirmacoes[random.randint(0, 3)
         
         frases_carta = ["A carta que eu tirei foi", "A carta que eu sortiei foi", "A carta que eu virei foi", "Eu virei", "Eu tirei"]
         
         frase_tirada = frases_carta[random.randint(0, len(frases_carta) - 1)]
-        
-        nome_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
-        
-        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
         
         carta_indice = random.randint(1, 13) - 1
         
@@ -109,62 +124,43 @@ class RuleIntentHandler(AbstractRequestHandler):
         slot = ask_utils.request_util.get_slot(handler_input, "carta")
         
         if slot.value in ["às", "ás", "as", "asinho"]:
-            speak_output = "Ás significa que quem tirou a carta bebe"
+            speak_output = significado_as
             
         elif slot.value in ["2", "dois", "doisinho"]:
-            speak_output = "Dois significa que quem tirou a carta deve escolher duas pessoas para beber"
+            speak_output = significado_dois
             
         elif slot.value in ["3", "tres"]:
-            speak_output = "Tres significa Fui à feira. Quem tirou a carta deve dizer 'Fui a feira e comprei' e então escolher \
-            um item. A pessoa seguinte da roda deve repetir o que foi dito acrescentando mais um item. Quem esquecer ou trocar \
-            a ordem, bebe"
+            speak_output = significado_tres
         
         elif slot.value in ["4", "quatro", "quatrinho"]:
-            speak_output = "Quatro significa Eu Nunca. Quem tirou a carta deve falar algo que nunca fez. Que já fez, bebe"
+            speak_output = significado_quatro
         
         elif slot.value in ["5", "cinco", "cinquinho"]:
-            speak_output = "Cinco significa C S composto. Quem tirou a carta deve falar uma palavra que não comece com C ou S e \
-            que não seja composta. A pessoa seguinte da roda deve falar uma outra palavra relacionada seguindo as mesmas regras. \
-            Quem errar ou repetir uma palavra já dita, bebe"
+            speak_output = significado_cinco
         
         elif slot.value in ["6", "seis", "seisinho"]:
-            speak_output = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
-            do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe."
+            speak_output = significado_seis
         
-        # elif slot.value in ["7", "sete", "setinho"]:
-        #     speak_output = "Sete significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
-        #     deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
-        #     a sequência novamente em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
-            
         elif slot.value in ["7", "sete", "setinho"]:
-            speak_output = "Sete significa Pi. Quem tirou deve dizer começar a contar a partir de um, e a pessoa seguinte deve continuar a contagem. \
-            Sempre que o número a ser falado for múltiplo de sete ou terminar em sete, a pessoa da vez deve dizer Pi. Se errar, bebe."
+            speak_output = significado_sete
             
         elif slot.value in ["8", "oito", "oitinho"]:
-            speak_output = "Oito significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
-            deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
-            a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe."
-        
-        # elif slot.value in ["8", "oito", "oitinho"]:
-        #     speak_output = "Oito significa Patinhos na Lagoa. Quem tirou a carta deve dizer ." 
+            speak_output = significado_oito
         
         elif slot.value in ["9", "nove", "novinho", "novizinho"]:
-            speak_output = "Nove significa Regra Individual. Quem tirou a carta deve escolher alguém para fazer alguma ação \
-            toda vez que acontecer outra ação no jogo, incluindo beber. Se o jogador escolhido não cumprir, ele bebe."
+            speak_output = significado_nove
             
         elif slot.value in ["10", "dez", "dezinho", "deizinho"]:
-            speak_output = "Dez significa Regra Geral. Quem tirou deve escolher uma regra que vale para todos os jogadores. \
-            Quem não cumprir a regra, bebe. Valem no máximo duas regras gerais simultaneamente."
+            speak_output = significado_dez
             
         elif slot.value in ["dama", "daminha", "rainha"]:
-            speak_output = "Dama significa que todas as mulheres bebem"
+            speak_output = significado_dama
             
         elif slot.value in ["valete","valetinho"]:
-            speak_output = "Valete significa que todos os homens bebem"
-            # speak_output = '{carta_pedida} significa que todos os homens bebem'.format(carta_pedida=slot.value)
+            speak_output = significado_valete
             
         elif slot.value in ["rei", "reizinho"]:
-            speak_output = "Rei significa que todos bebem"
+            speak_output = significado_rei
             
         else:
             speak_output = "Hmm, não sei que carta é essa"
@@ -177,14 +173,46 @@ class RuleIntentHandler(AbstractRequestHandler):
         )
         
 
-class RememberRuleIntentHandler(AbstractRequestHandler):
+class RememberCardIntentHandler(AbstractRequestHandler):
     
     def can_handle(self, handler_input):
         # extract persistent attributes and check if they are all present
         attr = handler_input.attributes_manager.persistent_attributes
         attributes_are_present = ("last_rule" in attr)
 
-        return attributes_are_present and ask_utils.is_intent_name("RememberRuleIntent")(handler_input)
+        return attributes_are_present and ask_utils.is_intent_name("RememberCardIntent")(handler_input)
+        
+    def handle(self, handler_input):
+
+        attr = handler_input.attributes_manager.persistent_attributes
+        last_rule = attr['last_rule']
+
+        # frases_carta = ["A carta que eu tirei foi", "A carta que eu sortiei foi", "A carta que eu virei foi", "Eu virei", "Eu tirei"]
+        
+        # frase_tirada = frases_carta[random.randint(0, len(frases_carta) - 1)]     
+        
+        carta_tirada = nome_cartas[last_rule]
+
+        regra_tirada = regra_cartas[last_rule]
+        
+        speak_output = 'A última carta que tirei foi {carta_tirada}. {regra_tirada}.'.format(carta_tirada=carta_tirada, regra_tirada=regra_tirada)
+
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )
+
+
+class LastRuleIntentHandler(AbstractRequestHandler):
+    
+    def can_handle(self, handler_input):
+        # extract persistent attributes and check if they are all present
+        attr = handler_input.attributes_manager.persistent_attributes
+        attributes_are_present = ("last_rule" in attr)
+
+        return attributes_are_present and ask_utils.is_intent_name("LastRuleIntent")(handler_input)
         
     def handle(self, handler_input):
 
@@ -195,15 +223,50 @@ class RememberRuleIntentHandler(AbstractRequestHandler):
         
         # frase_tirada = frases_carta[random.randint(0, len(frases_carta) - 1)]
         
-        nome_cartas = ["ás", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
-        
-        regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
-        
         carta_tirada = nome_cartas[last_rule]
 
-        regra_tirada = regra_cartas[last_rule]
+        # regra_tirada = regra_cartas[last_rule]
+
+        if last_rule == 0:
+            regra_lembrada = significado_as
+            
+        elif last_rule == 1:
+            regra_lembrada = significado_dois
+            
+        elif last_rule == 2:
+            regra_lembrada = significado_tres
         
-        speak_output = 'A última carta que tirei foi {carta_tirada}. {regra_tirada}.'.format(carta_tirada=carta_tirada, regra_tirada=regra_tirada)
+        elif last_rule == 3:
+            regra_lembrada = significado_quatro
+        
+        elif last_rule == 4:
+            regra_lembrada = significado_cinco
+        
+        elif last_rule == 5:
+            regra_lembrada = significado_seis
+        
+        elif last_rule == 6:
+            regra_lembrada = significado_sete
+            
+        elif last_rule == 7:
+            regra_lembrada = significado_oito
+        
+        elif last_rule == 8:
+            regra_lembrada = significado_nove
+            
+        elif last_rule == 9:
+            regra_lembrada = significado_dez
+            
+        elif last_rule == 10:
+            regra_lembrada = significado_dama
+            
+        elif last_rule == 11:
+            regra_lembrada = significado_valete
+            
+        elif last_rule == 12:
+            regra_lembrada = significado_rei
+        
+        speak_output = 'A última carta que tirei foi {carta_tirada}. {regra_lembrada}'.format(carta_tirada=carta_tirada, regra_lembrada=regra_lembrada)
 
         return (
             handler_input.response_builder
@@ -351,7 +414,8 @@ sb = CustomSkillBuilder(persistence_adapter=s3_adapter)
 sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(PickACardIntentHandler())
 sb.add_request_handler(RuleIntentHandler())
-sb.add_request_handler(RememberRuleIntentHandler())
+sb.add_request_handler(RememberCardIntentHandler())
+sb.add_request_handler(LastRuleIntentHandler())
 sb.add_request_handler(InfoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())

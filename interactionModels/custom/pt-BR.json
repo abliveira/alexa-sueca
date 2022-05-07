@@ -89,7 +89,7 @@
                   ]
               },
               {
-                  "name": "RememberRuleIntent",
+                  "name": "RememberCardIntent",
                   "slots": [],
                   "samples": [
                       "Me lembre a última carta",
@@ -97,6 +97,28 @@
                       "Qual foi a última regra",
                       "Qual foi a última carta tirada",
                       "Qual foi a última carta"
+                  ]
+              },
+              {
+                  "name": "LastRuleIntent",
+                  "slots": [],
+                  "samples": [
+                      "qual a regra da última carta tirada",
+                      "qual a regra da última carta",
+                      "qual a regra da carta tirada",
+                      "qual a regra dessa carta",
+                      "qual o significado da última carta tirada",
+                      "qual o significado da última carta",
+                      "qual o significado da carta tirada",
+                      "qual o significado dessa carta",
+                      "o que significa a última carta tirada",
+                      "o que significa a última carta",
+                      "o que significa a carta tirada",
+                      "o que significa essa carta",
+                      "o que quer dizer a última carta tirada",
+                      "o que quer dizer a última carta",
+                      "o que quer dizer a carta tirada",
+                      "o que quer dizer essa carta"
                   ]
               }
           ],
