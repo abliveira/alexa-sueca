@@ -1,244 +1,318 @@
 {
-  "interactionModel": {
-      "languageModel": {
-          "invocationName": "jogo sueca",
-          "intents": [
-              {
-                  "name": "AMAZON.CancelIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.HelpIntent",
-                  "samples": [
-                      "como jogar",
-                      "come se joga",
-                      "não entendi o jogo",
-                      "me explique o jogo",
-                      "como funciona o jogo",
-                      "como é o jogo",
-                      "como funciona",
-                      "ajuda",
-                      "me ajuda",
-                      "explica o jogo"
-                  ]
-              },
-              {
-                  "name": "AMAZON.StopIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.NavigateHomeIntent",
-                  "samples": []
-              },
-              {
-                  "name": "AMAZON.FallbackIntent",
-                  "samples": []
-              },
-              {
-                  "name": "PickACardIntent",
-                  "slots": [],
-                  "samples": [
-                      "De uma carta",
-                      "Diga uma carta",
-                      "Fala uma carta",
-                      "Fale uma carta",
-                      "Manda uma carta",
-                      "Mande uma carta",
-                      "Me de uma carta",
-                      "Me diga uma carta",
-                      "Me sorteie uma carta",
-                      "Me tira uma carta",
-                      "Me tire uma carta",
-                      "Me vira uma carta",
-                      "Me vire uma carta",
-                      "Próxima carta",
-                      "Próxima rodada",
-                      "Sorteie uma carta",
-                      "Tira uma carta",
-                      "Tire uma carta",
-                      "Vira uma carta",
-                      "Vire uma carta"
-                  ]
-              },
-              {
-                  "name": "RuleIntent",
-                  "slots": [
-                      {
-                          "name": "carta",
-                          "type": "CartasPossiveis"
-                      }
-                  ],
-                  "samples": [
-                      "o que significa a carta {carta} de sueca",
-                      "o que significa a carta {carta}",
-                      "qual a regra da carta {carta}",
-                      "o que é {carta}",
-                      "o que quer dizer {carta}",
-                      "o que significa {carta}"
-                  ]
-              },
-              {
-                  "name": "InfoIntent",
-                  "slots": [],
-                  "samples": [
-                      "quem desenvolveu o jogo",
-                      "quem fez o jogo",
-                      "quem fez essa skill",
-                      "quem criou essa skill",
-                      "quem desenvolveu essa skill"
-                  ]
-              },
-              {
-                  "name": "RememberCardIntent",
-                  "slots": [],
-                  "samples": [
-                      "Me lembre a última carta",
-                      "Qual foi a última regra tirada",
-                      "Qual foi a última regra",
-                      "Qual foi a última carta tirada",
-                      "Qual foi a última carta"
-                  ]
-              },
-              {
-                  "name": "LastRuleIntent",
-                  "slots": [],
-                  "samples": [
-                      "qual a regra da última carta tirada",
-                      "qual a regra da última carta",
-                      "qual a regra da carta tirada",
-                      "qual a regra dessa carta",
-                      "qual o significado da última carta tirada",
-                      "qual o significado da última carta",
-                      "qual o significado da carta tirada",
-                      "qual o significado dessa carta",
-                      "o que significa a última carta tirada",
-                      "o que significa a última carta",
-                      "o que significa a carta tirada",
-                      "o que significa essa carta",
-                      "o que quer dizer a última carta tirada",
-                      "o que quer dizer a última carta",
-                      "o que quer dizer a carta tirada",
-                      "o que quer dizer essa carta"
-                  ]
-              }
-          ],
-          "types": [
-              {
-                  "name": "CartasPossiveis",
-                  "values": [
-                      {
-                          "name": {
-                              "value": "as",
-                              "synonyms": [
-                                  "às",
-                                  "ás",
-                                  "asinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "dois",
-                              "synonyms": [
-                                  "doisinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "tres",
-                              "synonyms": [
-                                  "treizinho",
-                                  "tresinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "quatro",
-                              "synonyms": [
-                                  "quatrozinho",
-                                  "quatrinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "cinco",
-                              "synonyms": [
-                                  "cinquinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "seis",
-                              "synonyms": [
-                                  "seisinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "sete",
-                              "synonyms": [
-                                  "setizinho",
-                                  "setinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "oito",
-                              "synonyms": [
-                                  "oitozinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "nove",
-                              "synonyms": [
-                                  "novizinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "dez",
-                              "synonyms": [
-                                  "deizinho",
-                                  "dezinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "dama",
-                              "synonyms": [
-                                  "daminha"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "rei",
-                              "synonyms": [
-                                  "reizinho"
-                              ]
-                          }
-                      },
-                      {
-                          "name": {
-                              "value": "valete",
-                              "synonyms": [
-                                  "valetinho"
-                              ]
-                          }
-                      }
-                  ]
-              }
-          ]
-      }
-  }
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "jogo sueca",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "como jogar",
+                        "come se joga",
+                        "não entendi o jogo",
+                        "me explique o jogo",
+                        "como funciona o jogo",
+                        "como é o jogo",
+                        "como funciona",
+                        "ajuda",
+                        "me ajuda",
+                        "explica o jogo",
+                        "quais são as regras do jogo",
+                        "quais são as regras",
+                        "qual é a regra do jogo",
+                        "qual é a regra",
+                        "o que tem que fazer"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PickACardIntent",
+                    "slots": [],
+                    "samples": [
+                        "De uma carta",
+                        "Diga uma carta",
+                        "Fala uma carta",
+                        "Fale uma carta",
+                        "Manda uma carta",
+                        "Mande uma carta",
+                        "Me de uma carta",
+                        "Me diga uma carta",
+                        "Me sorteie uma carta",
+                        "Me tira uma carta",
+                        "Me tire uma carta",
+                        "Me vira uma carta",
+                        "Me vire uma carta",
+                        "Próxima carta",
+                        "Próxima rodada",
+                        "Sorteie uma carta",
+                        "Tira uma carta",
+                        "Tire uma carta",
+                        "Vira uma carta",
+                        "Vire uma carta"
+                    ]
+                },
+                {
+                    "name": "RuleIntent",
+                    "slots": [
+                        {
+                            "name": "carta",
+                            "type": "CartasPossiveis"
+                        }
+                    ],
+                    "samples": [
+                        "o que significa a carta {carta} de sueca",
+                        "o que significa a carta {carta}",
+                        "qual a regra da carta {carta}",
+                        "o que é {carta}",
+                        "o que quer dizer {carta}",
+                        "o que significa {carta}",
+                        "o que tem que fazer com a carta {carta}",
+                        "o que precisa fazer com a carta {carta}"
+                    ]
+                },
+                {
+                    "name": "InfoIntent",
+                    "slots": [],
+                    "samples": [
+                        "quem desenvolveu o jogo",
+                        "quem é o desenvolvedor",
+                        "quem é o criador",
+                        "quem é que criou",
+                        "quem fez o jogo",
+                        "quem fez essa skill",
+                        "quem criou essa skill",
+                        "quem é que criou essa skill",
+                        "quem desenvolveu essa skill"
+                    ]
+                },
+                {
+                    "name": "RememberCardIntent",
+                    "slots": [],
+                    "samples": [
+                        "Me lembre a última carta",
+                        "Repete a carta",
+                        "Repete a carta tirada",
+                        "Repete a carta que você tirou",
+                        "Repete a última carta",
+                        "Repete a última carta tirada",
+                        "Repete a última carta que você tirou",
+                        "Fala de novo a carta",
+                        "Fala de novo a carta que você tirou",
+                        "Fala de novo a última carta",
+                        "Fala de novo a última carta que você tirou",
+                        "Fala de novo a última carta tirada",
+                        "Me diz de novo a carta",
+                        "Me diz a carta que você tirou",
+                        "Me fala novamente a carta",
+                        "Me fala novamente a carta que você tirou",
+                        "Diz de novo a carta",
+                        "Diz de novo a carta que você tirou",
+                        "Diz de novo a última carta",
+                        "Diz de novo a última carta que você tirou",
+                        "Diz de novo a última carta tirada",
+                        "Que carta que você acabou de tirar",
+                        "Que carta que você acabou de sortear",
+                        "Que carta que você acabou de virar",
+                        "Que carta que você tirou",
+                        "Que carta que você tirou mesmo",
+                        "Que carta que você sorteou",
+                        "Que carta que você sorteou mesmo",
+                        "Que carta que você virou",
+                        "Que carta que você virou mesmo",
+                        "Qual foi a última regra tirada",
+                        "Qual foi a última regra",
+                        "Qual foi a última regra que você tirou",
+                        "Qual foi a última regra que você sorteou",
+                        "Qual foi a última regra que você virou",
+                        "Qual foi a última carta tirada",
+                        "Qual foi a última carta",
+                        "Qual foi a última carta que você tirou",
+                        "Qual foi a última carta que você sorteou",
+                        "Qual foi a última carta que você virou"
+                    ]
+                },
+                {
+                    "name": "LastRuleIntent",
+                    "slots": [],
+                    "samples": [
+                        "qual a regra da carta que você tirou",
+                        "qual a regra da carta que você sorteou",
+                        "qual a regra da carta que você virou",
+                        "qual a regra da última carta tirada",
+                        "qual a regra da última carta",
+                        "qual a regra da carta tirada",
+                        "qual a regra dessa carta",
+                        "qual o significado da carta que você tirou",
+                        "qual o significado da carta que você sorteou",
+                        "qual o significado da carta que você virou",
+                        "qual o significado da última carta",
+                        "qual o significado da carta tirada",
+                        "qual o significado dessa carta",
+                        "o que significa a carta que você tirou",
+                        "o que significa a carta que você sorteou",
+                        "o que significa a carta que você virou",
+                        "o que significa a última carta tirada",
+                        "o que significa a última carta",
+                        "o que significa a carta tirada",
+                        "o que significa essa carta",
+                        "o que quer dizer a carta que você tirou",
+                        "o que quer dizer a carta que você sorteou",
+                        "o que quer dizer a carta que você virou",
+                        "o que quer dizer a última carta tirada",
+                        "o que quer dizer a última carta",
+                        "o que quer dizer a carta tirada",
+                        "o que quer dizer essa carta",
+                        "explique o que quer dizer a carta que você tirou",
+                        "explique o que quer dizer a carta que você sorteou",
+                        "explique o que quer dizer acarta que você virou",
+                        "explique o que quer dizer a última carta tirada",
+                        "explique o que quer dizer a última carta",
+                        "explique o que quer dizer a carta tirada",
+                        "explique o que quer dizer essa carta",
+                        "explique a carta que você tirou",
+                        "explique a carta que você sorteou",
+                        "explique a carta que você virou",
+                        "explique a última carta tirada",
+                        "explique a última carta",
+                        "explique a carta tirada",
+                        "explique essa carta",
+                        "explique essa carta que você tirou",
+                        "explique essa carta que você sorteou",
+                        "explique essa carta que você virou"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "CartasPossiveis",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "as",
+                                "synonyms": [
+                                    "às",
+                                    "ás",
+                                    "asinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dois",
+                                "synonyms": [
+                                    "doisinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tres",
+                                "synonyms": [
+                                    "treizinho",
+                                    "tresinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "quatro",
+                                "synonyms": [
+                                    "quatrozinho",
+                                    "quatrinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cinco",
+                                "synonyms": [
+                                    "cinquinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "seis",
+                                "synonyms": [
+                                    "seisinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sete",
+                                "synonyms": [
+                                    "setizinho",
+                                    "setinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "oito",
+                                "synonyms": [
+                                    "oitozinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nove",
+                                "synonyms": [
+                                    "novizinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dez",
+                                "synonyms": [
+                                    "deizinho",
+                                    "dezinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dama",
+                                "synonyms": [
+                                    "daminha"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "rei",
+                                "synonyms": [
+                                    "reizinho"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "valete",
+                                "synonyms": [
+                                    "valetinho"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
