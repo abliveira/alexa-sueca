@@ -24,30 +24,34 @@ logger.setLevel(logging.INFO)
 
 
 nome_cartas = ["ás", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "dama", "valete", "rei"]
-regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Pi", "Eu Nunca", "C S Composto", "Continência", "Fui à Feira e Comprei", "Vale banheiro", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
+# regra_cartas = ["Quem tirou bebe", "Duas pessoas bebem", "Fui à Feira e Comprei", "Eu Nunca", "C S Composto", "Continência", "Pi","Pim Pa Pum", "Regra Individual", "Regra Geral", "Mulheres bebem", "Homens bebem", "Todos bebem"]
 
 frases_carta = ["A carta que eu tirei foi", "A carta que eu sortiei foi", "A carta que eu virei foi", "Eu virei", "Eu tirei"]
 frases_carta_lembrando = ["A última carta que eu tirei foi","A carta que eu tirei foi", "A carta que eu sortiei foi",  "A carta que eu virei foi", "Eu virei", "Eu tirei"]
 
 significado_as = "Ás significa que quem tirou a carta bebe"
 significado_dois = "Dois significa que quem tirou a carta deve escolher duas pessoas para beber"
-significado_tres = "Três significa Fui à feira. Quem tirou a carta deve dizer 'Fui a feira e comprei' e então escolher \
-            um item. A pessoa seguinte da roda deve repetir o que foi dito acrescentando mais um item. Quem esquecer ou trocar \
-            a ordem, bebe"
+significado_tres = "Três significa Pi. Quem tirou deve dizer começar a contar a partir de um, e a pessoa seguinte deve continuar a contagem. \
+            Sempre que o número a ser falado for múltiplo de três ou terminar em três, a pessoa da vez deve dizer Pi. Se errar, bebe"
 significado_quatro = "Quatro significa Eu Nunca. Quem tirou a carta deve falar algo que nunca fez. Quem já fez, bebe"
 significado_cinco = "Cinco significa C S composto. Quem tirou a carta deve falar uma palavra que não comece com C ou S e \
             que não seja composta. A pessoa seguinte da roda deve falar uma outra palavra relacionada seguindo as mesmas regras. \
             Quem errar ou repetir uma palavra já dita, bebe"
 significado_seis = "Seis significa Continência. Quem tirou deve prestar Continência discretamente em qualquer momento \
             do jogo e todos os outros jogadores devem repetir o gesto. O último a prestar Continência, bebe"
-significado_sete = "Sete significa Pi. Quem tirou deve dizer começar a contar a partir de um, e a pessoa seguinte deve continuar a contagem. \
-            Sempre que o número a ser falado for múltiplo de sete ou terminar em sete, a pessoa da vez deve dizer Pi. Se errar, bebe"
-significado_oito = "Oito significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
-            deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
-            a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe"
+significado_sete = "Sete significa Fui à feira. É um jogo da memória, e quem tirou a carta deve dizer 'Fui a feira e comprei'\
+         e então escolher um item. A pessoa seguinte da roda deve repetir o que foi dito acrescentando mais um item. Quem \
+         esquecer ou trocar a ordem, bebe"
+significado_oito = "Oito significa Vale banheiro. Quem tirou ganha o direito de ir no banheiro. Quem não tiver o direito e não \
+        aguentar, pode ir, mas bebe duas vezes"
+# significado_oito = "Oito significa Pim Pa Pum. Quem tirou deve dizer Pim, a pessoa seguinte deve dizer Pa, e a próxima pessoa \
+#            deve dizer Pum, sempre em sentido horário. A pessoa que disser Pum deve apontar para qualquer pessoa da roda para recomeçar \
+#            a sequência em sentido horário. Quem errar a sua vez ou o que deve ser dito, bebe"
 significado_nove = "Nove significa Regra Individual. Quem tirou a carta deve escolher alguém para fazer alguma ação \
             toda vez que acontecer outra ação no jogo, incluindo beber. Se o jogador escolhido não cumprir, ele bebe"
 significado_dez = "Dez significa Regra Geral. Quem tirou deve escolher uma regra que vale para todos os jogadores. \
+            Por exemplo, só pode falar com sotaque. Ou é proibido dizer a palavra não. \
             Quem não cumprir a regra, bebe. Valem no máximo duas regras gerais simultaneamente"
 significado_dama = "Dama significa que todas as mulheres bebem"
 significado_valete = "Valete significa que todos os homens bebem"
