@@ -303,7 +303,11 @@ class HelpIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         speak_output = "O jogo é muito simples. Em sentido horário, a cada rodada um jogador me pede para \
         tirar uma carta e o jogador deve seguir a regra da carta. A qualquer momento você pode me perguntar \
-        qual o significado de uma carta ou qual foi a última carta tirada. O que você deseja?"
+        qual o significado ou qual foi a última carta tirada. \
+        Para jogar, diga: Alexa, tire uma carta do Jogo Sueca. \
+        Para que eu explique um significado, pergunte: Alexa, qual o significado dessa carta do Jogo Sueca? \
+        Ou por exemplo, Alexa, qual o significado da carta dama do Jogo Sueca? \
+        O que você deseja?"
 
         return (
             handler_input.response_builder
